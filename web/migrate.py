@@ -36,17 +36,35 @@ fingers_data = [
 	{
 		"id": 1,
 		"user_id": 2,
-		"finger_id": "",
 		"code": "8B;44:12:22",
 		"name": "",
 	},
 	{
 		"id": 2,
 		"user_id": 3,
-		"finger_id": "",
 		"code": "8433:2:12:22",
 		"name": "",
 	}
+]
+
+
+locations_data = [
+	{
+		"id": 1,
+		"name": "study_place",
+		"full_name": "Plan yerin plan bolumcesenin okuw binasy",
+		"address": "Parahat 01",
+		"latitude": "11112",
+		"longitude": "92323",
+	},
+	{
+		"id": 2,
+		"name": "entrance",
+		"full_name": "Plan yerin girelgesi",
+		"address": "Parahat 01",
+		"latitude": "11121",
+		"longitude": "92333",
+	},
 ]
 
 
@@ -58,5 +76,9 @@ for user in users_data:
 for finger in fingers_data:
 	current_finger = Finger(**finger)
 	db.session.add(current_finger)
+
+for location in locations_data:
+	current_location = Location(**location)
+	db.session.add(current_location)
 
 db.session.commit()
