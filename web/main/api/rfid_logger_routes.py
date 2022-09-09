@@ -44,7 +44,11 @@ def rfid_logger():
 	db.session.add(new_log)
 	db.session.commit()
 
-	return make_response(this_user.to_json())
+	return make_response({
+		"user": this_user.to_json(),
+		"location": this_location.to_json(),
+		"entrance_type": entrance_type,
+	})
 
 
 @app.route("/access_logs/")
