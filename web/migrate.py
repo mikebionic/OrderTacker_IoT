@@ -1,7 +1,7 @@
 from main import db
 
 from main.config import Config
-from main.models import User, Finger
+from main.models import User, Finger, Location
 
 db.drop_all()
 db.create_all()
