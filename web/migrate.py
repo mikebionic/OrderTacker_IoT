@@ -16,7 +16,7 @@ users_data = [
 		"name": "Plan",
 		"surname": "Planyyew",
 		"patronomic": "Planyyewic",
-		"position": "Uly l-nt",
+		"position": "Iş ýörediji",
 		"pin": "",
 		"avatar": "",
 	},
@@ -26,7 +26,7 @@ users_data = [
 		"name": "Jemal",
 		"surname": "Planyyewa",
 		"patronomic": "Planyyewna",
-		"position": "Kapitan-leytenant",
+		"position": "Mugallym",
 		"pin": "",
 		"avatar": "",
 	}
