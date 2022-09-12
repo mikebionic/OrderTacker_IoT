@@ -1,3 +1,5 @@
-# from . import routes
+from flask import Blueprint
+
+api = Blueprint('api', __name__)
 
 from . import rfid_logger_routes

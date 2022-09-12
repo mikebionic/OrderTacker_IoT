@@ -3,12 +3,12 @@ from datetime import datetime
 from sqlalchemy.orm import joinedload
 from flask_login import current_user
 
-from main import app, db
+from . import api, db
 from main.models import Access_log, Finger
 
 
 # http://192.168.1.252:5000/finger_logger/?device_key=finger_secret_key&finger_id=3
-@app.route("/finger_logger/")
+@api.route("/finger_logger/")
 def finger_logger():
 	device_key = request.args.get("device_key",None,str)
 	finger_id = request.args.get("finger_id",0,int)

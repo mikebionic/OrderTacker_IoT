@@ -7,11 +7,12 @@ from flask import (
 # from flask_login import login_required, current_user, login_user
 # from main.models import User
 
-from main import app
+from . import bp
 
 
-@app.route("/")
-@app.route("/home")
-@app.route("/app/access_logs")
+@bp.route("/")
+@bp.route("/home")
+@bp.route("/app/access_logs")
 def home():
+	print("h")
 	return render_template('home.html')

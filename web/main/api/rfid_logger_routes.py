@@ -1,10 +1,11 @@
 from flask import make_response, abort, request, jsonify
 
-from main import app, db
+from . import api
+from main import db
 from main.models import Access_log, Finger, Location
 
 
-@app.route("/rfid_logger/")
+@api.route("/rfid_logger/")
 def rfid_logger():
 	code = request.args.get("code",None,str)
 	location = request.args.get("location","entrance",str)
@@ -51,7 +52,7 @@ def rfid_logger():
 	})
 
 
-@app.route("/access_logs/")
+@api.route("/access_logs/")
 def access_logs():
 	filtering = {}
 
