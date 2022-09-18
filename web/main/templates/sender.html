@@ -1,0 +1,116 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div>
+	<fieldset>
+		<legend>
+			Personal Information
+		</legend>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label>
+						Ady
+					</label>
+					<input type="text" name="firstName" class="form-control" placeholder="Ady">
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label class="control-label">
+						Atasynyň ady
+					</label>
+					<input type="text" name="lastName" class="form-control" placeholder="Atasynyň ady">
+				</div>
+			</div>
+
+			<div class="input-group">
+				<span class="input-group-addon">@</span>
+				<input type="text" placeholder="Username" class="form-control">
+			</div>
+
+			<div class="input-group">
+				<span class="input-group-addon">@</span>
+				<input type="text" placeholder="Username" class="form-control">
+			</div>
+
+			<div class="input-group">
+				<span class="input-group-addon">@</span>
+				<input type="text" placeholder="Username" class="form-control">
+			</div>
+
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label class="block">
+						Ibermeli ýer
+					</label>
+					<div class="clip-radio radio-primary">
+						<input type="radio" id="warehouse" name="route" value="warehouse" checked="checked">
+						<label for="warehouse">
+							Jemleýji ammar
+						</label>
+						<input type="radio" id="house" name="route" value="house">
+						<label for="house">
+							Öý
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label>
+						Ibermeli şäheri we regiony saýlaň
+					</label>
+					<select name="country" class="form-control">
+						<!-- <option value="">&nbsp;</option> -->
+						<option value="AS">Aşgabat</option>
+						<option value="AH">Ahal</option>
+						<option value="BN">Balkan</option>
+						<option value="LB">Lebap</option>
+						<option value="DZ">Daşoguz</option>
+						<option value="MR">Mary</option>
+
+					</select>
+				</div>
+			</div>
+
+			<div class="col-md-6">
+				<div class="form-group">
+					<label class="control-label">
+						Adres
+					</label>
+					<input type="text" name="address" class="form-control" placeholder="Adres">
+				</div>
+			</div>
+
+		</div>
+
+
+		<div class="checkbox clip-check check-success checkbox-inline">
+			<input type="checkbox" id="checkbox11" value="1" checked="">
+			<label for="checkbox11">
+				Sargyt tölendi
+			</label>
+		</div>
+
+		<div class="panel panel-white">
+			<div class="panel-heading">
+				<div class="panel-title">
+					Default
+				</div>
+			</div>
+			<div class="panel-body">
+				<div class="form-group">
+					<textarea placeholder="Default Text" id="form-field-22" class="form-control"></textarea>
+				</div>
+			</div>
+		</div>
+
+
+	</fieldset>
+</div>
+
+{% endblock %}
