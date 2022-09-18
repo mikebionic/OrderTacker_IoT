@@ -11,8 +11,16 @@ from . import bp
 
 
 @bp.route("/")
-@bp.route("/home")
-@bp.route("/app/access_logs")
-def home():
-	print("h")
-	return render_template('home.html')
+@bp.route("/main")
+def main():
+	return render_template("main.html")
+
+
+@bp.route("/sender")
+def sender():
+	return render_template("sender.html")
+
+
+@bp.route("/client")
+def client():
+	return render_template("timeline.html")

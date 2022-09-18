@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>{{ title if title else 'Haryt nirede' }}</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+  	<link href="{{ url_for('static', filename='img/favicon.png' }}" rel="icon">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap/css/bootstrap.min.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/fontawesome/css/font-awesome.min.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+		{% block styles %}{% endblock %}
+	</head>
+	
+	<body>
+		<div id="app">
+			<div>
+				<div class="wrap-content container" id="container">
+					<!-- start: PAGE TITLE -->
+					<section id="page-title">
+						<div class="row">
+							<div class="col-sm-8">
+								<h1 class="mainTitle">{{ title if title else 'Haryt nirede' }}</h1>
+								<span class="mainDescription">Timeline is used to show chronological events in a clear and effective way</span>
+							</div>
+							<ol class="breadcrumb">
+								<li>
+									<span>Main</span>
+								</li>
+								<li class="active">
+									<span>{{ title if title else 'Haryt nirede' }}</span>
+								</li>
+							</ol>
+						</div>
+					</section>
+					<!-- end: PAGE TITLE -->
+					<!-- start: TIMELINE -->
+					<div class="container-fluid container-fullw bg-white">
+						<div class="row">
+							<div class="col-md-12">
+
+
+
+								{% with messages = get_flashed_messages(with_categories=true) %} {%
+								if messages %} {% for category, message in messages %}
+								<div class="p-3 alert alert-{{ category }}" role="alert">
+								{{ message }}
+								</div>
+								{% endfor %} {% endif %} {% endwith %} {% block content %}{%
+								endblock %}
+
+
+
+							</div>
+						</div>
+					</div>
+					<!-- start: TIMELINE -->
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
