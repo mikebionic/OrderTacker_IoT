@@ -21,6 +21,6 @@ def sender():
 	return render_template("sender.html")
 
 
-@bp.route("/client")
+@bp.route("/customer")
 def client():
 	return render_template("timeline.html")
