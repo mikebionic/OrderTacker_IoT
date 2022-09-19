@@ -5,7 +5,7 @@
 <div>
 	<fieldset>
 		<legend>
-			Personal Information
+			Sargydyň maglumaty
 		</legend>
 		<div class="row">
 			<div class="col-md-6">
@@ -25,19 +25,30 @@
 				</div>
 			</div>
 
-			<div class="input-group">
-				<span class="input-group-addon">@</span>
-				<input type="text" placeholder="Username" class="form-control">
-			</div>
 
-			<div class="input-group">
-				<span class="input-group-addon">@</span>
-				<input type="text" placeholder="Username" class="form-control">
+			<div class="col-md-6">
+				<div class="form-group">
+					<div class="input-group">
+						<span class="input-group-addon">@</span>
+						<input type="text" placeholder="E-mail" class="form-control">
+					</div>
+				</div>
 			</div>
-
-			<div class="input-group">
-				<span class="input-group-addon">@</span>
-				<input type="text" placeholder="Username" class="form-control">
+			<div class="col-md-6">
+				<div class="form-group">
+					<div class="input-group">
+						<span class="input-group-addon"> <i class="fa fa-phone"></i> </span>
+						<input type="text" placeholder="Çaparyň belgisi" class="form-control">
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+					<div class="input-group">
+						<span class="input-group-addon"> <i class="fa fa-phone"></i> </span>
+						<input type="text" placeholder="Iberijiň belgisi" class="form-control">
+					</div>														
+				</div>
 			</div>
 
 		</div>
@@ -75,31 +86,72 @@
 
 					</select>
 				</div>
+				<div class="form-group">
+					<label class="control-label">
+						Salgy
+					</label>
+					<input type="text" name="address" class="form-control" placeholder="salgy">
+				</div>
 			</div>
 
 			<div class="col-md-6">
-				<div class="form-group">
-					<label class="control-label">
-						Adres
-					</label>
-					<input type="text" name="address" class="form-control" placeholder="Adres">
-				</div>
 			</div>
 
 		</div>
 
 
-		<div class="checkbox clip-check check-success checkbox-inline">
+		<div class="checkbox clip-check check-primary checkbox-inline">
 			<input type="checkbox" id="checkbox11" value="1" checked="">
 			<label for="checkbox11">
 				Sargyt tölendi
 			</label>
 		</div>
 
+
+		<div class="row">
+			<div class="col-sm-12">
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th> # </th>
+							<th> Haryt </th>
+							<th class="hidden-480"> San </th>
+							<th class="hidden-480"> Bahasy </th>
+							<th> Jemi </th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td> 1 </td>
+							<td>HP wireless optical mouse</td>
+							<td class="hidden-480">1</td>
+							<td class="hidden-480">100 m.</td>
+							<td>100 m.</td>
+						</tr>
+						<tr>
+							<td> 2 </td>
+							<td> Air Pods </td>
+							<td class="hidden-480">50</td>
+							<td class="hidden-480">3 m.</td>
+							<td>150 m.</td>
+						</tr>
+						<tr>
+							<td> 3 </td>
+							<td> Arduino Set #1 </td>
+							<td class="hidden-480">1</td>
+							<td class="hidden-480">982 m.</td>
+							<td>982 m.</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+
 		<div class="panel panel-white">
 			<div class="panel-heading">
 				<div class="panel-title">
-					Default
+					Bellik
 				</div>
 			</div>
 			<div class="panel-body">
@@ -111,6 +163,19 @@
 
 
 	</fieldset>
+
+	<div style="display:flex; justify-content: space-between;">
+		<button type="button" class="btn btn-wide btn-danger btn-lg">
+			<i class="fa fa-trash-o"></i>
+			Beset
+		</button>
+			<!-- <a href="/save"> -->
+		<button type="button" class="btn btn-wide btn-dark-azure btn-lg">
+			<i class="fa fa-arrow-circle-right"></i>
+			Hasaba al
+		</button>
+	</div>
+	<!-- </a> -->
 </div>
 
 {% endblock %}
