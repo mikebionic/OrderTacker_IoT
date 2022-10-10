@@ -2,7 +2,7 @@
 import serial, requests, json
 
 config = {
-	"serial_port": "/dev/ACM0",
+	"serial_port": "/dev/ttyACM0",
 	"baudrate": 9600,
 	"server_host": "http://localhost",
 	"server_port": "5000",
@@ -17,17 +17,18 @@ try:
 except:
 	pass
 
-
 ser = serial.Serial(port=config['serial_port'], baudrate=config['baudrate'], timeout=1)
-url = f"{config['server_host']}:{config['server_port']}{config['server_route']}"
+url = f"{config['server_host']}:{config['server_port']}{config['server_route']}/?location={config['location']}&location_key={config['location_key']}"
 
 while True:
-    stream = ser.readline()
+    stream = str(ser.readline())
     print(stream)
     try:
-        stream.indexOf("card_")
-        card_code = stream.split("_")[1]
-        print(f"{url}{card_code}")
-        r = requests.get(f"{url}{card_code}")
+        if (len(stream) > 5):
+            # example "card_8A:4B:81:7F\r\n"
+            stream.index("card_")
+            card_code = stream.split("_")[1][:11]
+            print(f"{url}{card_code}")
+            r = requests.get(f"{url}&card_id={card_code}")
     except Exception as ex:
         print(ex)

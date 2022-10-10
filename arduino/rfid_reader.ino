@@ -39,7 +39,7 @@ void loop() {
 
 
 void openDoor(){
-  Serial.println("door open called");
+  //Serial.println("door open called");
   digitalWrite(ledIndicator, 1);
   gapy.write(170);
   delay(doorDelay);
