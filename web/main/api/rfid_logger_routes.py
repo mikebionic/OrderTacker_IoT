@@ -2,7 +2,46 @@ from flask import make_response, abort, request, jsonify
 
 from . import api
 from main import db
-from main.models import Access_log, Finger, Location
+from main.models import Access_log, Finger, Location, Order
+
+
+
+@api.route("/order_locator/")
+def order_locator():
+	code = request.args.get("code",None,str)
+	location = request.args.get("location","",str)
+	location_key = request.args.get("location_key","",str)
+	entrance_type = request.args.get("entrance_type","",str)
+	description = request.args.get("description","",str)
+
+	if not code:
+		abort(400)
+	order = Order.query.filter_by(card_code = code, completed=False).first()
+	if not order:
+		abort(404)
+	this_location = Location.query\
+		.filter(Location.key.ilike(f"%{location_key}%"))\
+		.first()
+
+	this_entrance_type = 0 if entrance_type == "exit" else 1
+	new_log_data = {
+		"order_code": order.order_code,
+		"entrance_type": this_entrance_type,
+		"location_id": this_location.id if this_location else None,
+		"location_info": location if location else f"{this_location.address} {this_location.full_name}" if this_location else "Unknown",
+		"description": description,
+	}
+
+	new_log = Access_log(**new_log_data)
+	db.session.add(new_log)
+	print(new_log.to_json())
+	db.session.commit()
+
+	return make_response({
+		"location": this_location.to_json(),
+		"access_log": new_log.to_json(),
+		"entrance_type": this_entrance_type,
+	})
 
 
 @api.route("/rfid_logger/")

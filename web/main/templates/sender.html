@@ -1,36 +1,37 @@
-{% extends "layout.html" %}
-
-{% block content %}
+{% extends "layout.html" %} {% block content %}
 
 <div>
 	<fieldset>
-		<legend>
-			Sargydyň maglumaty
-		</legend>
+		<legend>Sargydyň maglumaty</legend>
 		<div class="row">
 			<div class="col-md-6">
 				<div class="form-group">
-					<label>
-						Ady
-					</label>
-					<input type="text" name="firstName" class="form-control" placeholder="Ady">
+					<label> Ady </label>
+					<input
+						type="text"
+						name="firstName"
+						class="form-control"
+						placeholder="Ady"
+					/>
 				</div>
 			</div>
 			<div class="col-md-6">
 				<div class="form-group">
-					<label class="control-label">
-						Atasynyň ady
-					</label>
-					<input type="text" name="lastName" class="form-control" placeholder="Atasynyň ady">
+					<label class="control-label"> Atasynyň ady </label>
+					<input
+						type="text"
+						name="lastName"
+						class="form-control"
+						placeholder="Atasynyň ady"
+					/>
 				</div>
 			</div>
-
 
 			<div class="col-md-6">
 				<div class="form-group">
 					<div class="input-group">
 						<span class="input-group-addon">@</span>
-						<input type="text" placeholder="E-mail" class="form-control">
+						<input type="text" placeholder="E-mail" class="form-control" />
 					</div>
 				</div>
 			</div>
@@ -38,7 +39,11 @@
 				<div class="form-group">
 					<div class="input-group">
 						<span class="input-group-addon"> <i class="fa fa-phone"></i> </span>
-						<input type="text" placeholder="Çaparyň belgisi" class="form-control">
+						<input
+							type="text"
+							placeholder="Çaparyň belgisi"
+							class="form-control"
+						/>
 					</div>
 				</div>
 			</div>
@@ -46,35 +51,46 @@
 				<div class="form-group">
 					<div class="input-group">
 						<span class="input-group-addon"> <i class="fa fa-phone"></i> </span>
-						<input type="text" placeholder="Iberijiň belgisi" class="form-control">
-					</div>														
+						<input
+							type="text"
+							placeholder="Iberijiň belgisi"
+							class="form-control"
+						/>
+					</div>
 				</div>
 			</div>
-
 		</div>
 		<div class="row">
 			<div class="col-md-6">
 				<div class="form-group">
-					<label class="block">
-						Ibermeli ýer
-					</label>
+					<label class="block"> Ibermeli ýer </label>
 					<div class="clip-radio radio-primary">
-						<input type="radio" id="warehouse" name="route" value="warehouse" checked="checked">
-						<label for="warehouse">
-							Jemleýji ammar
-						</label>
-						<input type="radio" id="house" name="route" value="house">
-						<label for="house">
-							Öý
-						</label>
+						<input
+							type="radio"
+							id="warehouse"
+							name="route"
+							value="warehouse"
+							checked="checked"
+						/>
+						<label for="warehouse"> Jemleýji ammar </label>
+						<input type="radio" id="house" name="route" value="house" />
+						<label for="house"> Öý </label>
 					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label"> Code </label>
+					<input
+						type="text"
+						name="card_code"
+						class="form-control"
+						placeholder="Code"
+					/>
 				</div>
 			</div>
 			<div class="col-md-6">
 				<div class="form-group">
-					<label>
-						Ibermeli şäheri we regiony saýlaň
-					</label>
+					<label> Ibermeli şäheri we regiony saýlaň </label>
 					<select name="country" class="form-control">
 						<!-- <option value="">&nbsp;</option> -->
 						<option value="AS">Aşgabat</option>
@@ -83,61 +99,57 @@
 						<option value="LB">Lebap</option>
 						<option value="DZ">Daşoguz</option>
 						<option value="MR">Mary</option>
-
 					</select>
 				</div>
 				<div class="form-group">
-					<label class="control-label">
-						Salgy
-					</label>
-					<input type="text" name="address" class="form-control" placeholder="salgy">
+					<label class="control-label"> Salgy </label>
+					<input
+						type="text"
+						name="address"
+						class="form-control"
+						placeholder="salgy"
+					/>
 				</div>
 			</div>
 
-			<div class="col-md-6">
-			</div>
-
+			<div class="col-md-6"></div>
 		</div>
-
 
 		<div class="checkbox clip-check check-primary checkbox-inline">
-			<input type="checkbox" id="checkbox11" value="1" checked="">
-			<label for="checkbox11">
-				Sargyt tölendi
-			</label>
+			<input type="checkbox" id="checkbox11" value="1" checked="" />
+			<label for="checkbox11"> Sargyt tölendi </label>
 		</div>
-
 
 		<div class="row">
 			<div class="col-sm-12">
 				<table class="table table-striped">
 					<thead>
 						<tr>
-							<th> # </th>
-							<th> Haryt </th>
-							<th class="hidden-480"> San </th>
-							<th class="hidden-480"> Bahasy </th>
-							<th> Jemi </th>
+							<th>#</th>
+							<th>Haryt</th>
+							<th class="hidden-480">San</th>
+							<th class="hidden-480">Bahasy</th>
+							<th>Jemi</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
-							<td> 1 </td>
+							<td>1</td>
 							<td>HP wireless optical mouse</td>
 							<td class="hidden-480">1</td>
 							<td class="hidden-480">100 m.</td>
 							<td>100 m.</td>
 						</tr>
 						<tr>
-							<td> 2 </td>
-							<td> Air Pods </td>
+							<td>2</td>
+							<td>Air Pods</td>
 							<td class="hidden-480">50</td>
 							<td class="hidden-480">3 m.</td>
 							<td>150 m.</td>
 						</tr>
 						<tr>
-							<td> 3 </td>
-							<td> Arduino Set #1 </td>
+							<td>3</td>
+							<td>Arduino Set #1</td>
 							<td class="hidden-480">1</td>
 							<td class="hidden-480">982 m.</td>
 							<td>982 m.</td>
@@ -147,29 +159,28 @@
 			</div>
 		</div>
 
-
 		<div class="panel panel-white">
 			<div class="panel-heading">
-				<div class="panel-title">
-					Bellik
-				</div>
+				<div class="panel-title">Bellik</div>
 			</div>
 			<div class="panel-body">
 				<div class="form-group">
-					<textarea placeholder="Default Text" id="form-field-22" class="form-control"></textarea>
+					<textarea
+						placeholder="Default Text"
+						id="form-field-22"
+						class="form-control"
+					></textarea>
 				</div>
 			</div>
 		</div>
-
-
 	</fieldset>
 
-	<div style="display:flex; justify-content: space-between;">
+	<div style="display: flex; justify-content: space-between">
 		<button type="button" class="btn btn-wide btn-danger btn-lg">
 			<i class="fa fa-trash-o"></i>
 			Beset
 		</button>
-			<!-- <a href="/save"> -->
+		<!-- <a href="/save"> -->
 		<button type="button" class="btn btn-wide btn-dark-azure btn-lg">
 			<i class="fa fa-arrow-circle-right"></i>
 			Hasaba al

@@ -1,7 +1,10 @@
-from main import db
-
+from main import db, create_app
 from main.config import Config
 from main.models import User, Finger, Location, Order
+
+
+app = create_app()
+app.app_context().push()
 
 db.drop_all()
 db.create_all()
@@ -51,6 +54,7 @@ fingers_data = [
 orders_data = [
 	{
 		"order_code": 1,
+		"card_code": "8A:4B:81:7F",
 		"sender_name": "Muhammetberdi",
 		"sender_surname": "Jepbarov",
 		"postal_phone_number": "+99361234567",
@@ -92,6 +96,7 @@ locations_data = [
 	{
 		"id": 1,
 		"name": "aeroport",
+		"icon": "plane",
 		"full_name": "International Aeroport of Turkmenistan",
 		"address": "Gurbansoltan-eje",
 		"key": "crypted_code_of_international_aeroport",
@@ -101,8 +106,30 @@ locations_data = [
 	{
 		"id": 2,
 		"name": "entrance",
+		"icon": "map-marker",
 		"full_name": "Plan yerin girelgesi",
 		"address": "Parahat 01",
+		"latitude": "11121",
+		"longitude": "92333",
+	},
+	{
+		"id": 3,
+		"name": "ashgabat",
+		"icon": "map-marker",
+		"full_name": "Aşgabat",
+		"address": "Magtymguly",
+		"key": "crypted_code_3",
+		"latitude": "11121",
+		"longitude": "92333",
+	},
+	{
+		"id": 4,
+		"name": "turkiýe",
+		"icon": "map-marker",
+		"full_name": "Türkiýe",
+		"address": "Aeroport",
+		"key": "crypted_code_4",
+		"latitude": "11121",
 		"key": "crypted_code_2",
 		"latitude": "11121",
 		"longitude": "92333",

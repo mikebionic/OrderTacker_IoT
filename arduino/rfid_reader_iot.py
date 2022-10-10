@@ -6,10 +6,11 @@ config = {
     "baudrate": 9600,
     "server_host": "http://localhost",
     "server_port": "5000",
-    "server_route": "/rfid_tag/",
+    "server_route": "/api/order_locator/",
     "entrance_type": "entrance",
     "location": "International Aeroport of Turkmenistan",
-    "location_key": "crypted_code_of_international_aeroport"
+    "location_key": "crypted_code_of_international_aeroport",
+    "description": "Sargyt Aşgabat aeroportda hasabata alyndy we ammara geçirildi"
 }
 
 try:
@@ -19,11 +20,10 @@ except:
 	pass
 
 ser = serial.Serial(port=config['serial_port'], baudrate=config['baudrate'], timeout=1)
-url = f"{config['server_host']}:{config['server_port']}{config['server_route']}/?location={config['location']}&code={config['location_key']}&entrance_type={config['entrance_type']}"
+url = f"{config['server_host']}:{config['server_port']}{config['server_route']}?location={config['location']}&location_key={config['location_key']}&entrance_type={config['entrance_type']}&description={config['description']}"
 
 while True:
     stream = str(ser.readline())
-    print(stream)
     try:
         if (len(stream) > 5):
             # example "card_8A:4B:81:7F\r\n"
