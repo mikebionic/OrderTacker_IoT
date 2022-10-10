@@ -1,0 +1,9 @@
+{
+	"serial_port": "/dev/ACM0",
+	"baudrate": 9600,
+	"server_host": "http://localhost",
+	"server_port": "5000",
+	"server_route": "/rfid_tag/",
+	"location": "International Aeroport of Turkmenistan",
+	"location_key": "crypted_code_of_international_aeroport"
+}
