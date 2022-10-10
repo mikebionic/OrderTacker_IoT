@@ -6,6 +6,7 @@ from flask import (
 )
 # from flask_login import login_required, current_user, login_user
 # from main.models import User
+from main.models import Order, Access_log
 
 from . import bp
 
@@ -23,4 +24,5 @@ def sender():
 
 @bp.route("/customer")
 def client():
-	return render_template("timeline.html")
+	access_logs = Access_log.query.all()
+	return render_template("timeline.html", access_logs = access_logs)

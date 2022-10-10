@@ -1,4 +1,6 @@
-{% extends "layout.html" %} {% block content %}
+{% extends "layout.html" %} {% block styles %}
+<meta class="restart" />
+{% endblock %} {% block content %}
 <div id="timeline">
 	<div class="timeline">
 		<div class="spine"></div>
@@ -75,9 +77,9 @@
 					</div>
 					<div class="timeline_title">
 						<i class="fa fa-map-marker fa-2x pull-left fa-border"></i>
-						<h4 class="text-white no-margin padding-5">{% log.info %}</h4>
+						<h4 class="text-white no-margin padding-5">{{ log.info }}</h4>
 					</div>
-					<div class="timeline_content">{% log.description %}</div>
+					<div class="timeline_content">{{ log.description }}</div>
 				</div>
 			</li>
 			{% endfor %} {% endif %}
