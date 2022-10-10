@@ -1,7 +1,7 @@
 from main import db
 
 from main.config import Config
-from main.models import User, Finger, Location
+from main.models import User, Finger, Location, Order
 
 db.drop_all()
 db.create_all()
@@ -42,18 +42,59 @@ fingers_data = [
 	{
 		"id": 2,
 		"user_id": 3,
-		"code": "8433:2:12:22",
+		"code": "8A:4B:81:7F",
 		"name": "",
 	}
 ]
 
 
+orders_data = [
+	{
+		"order_code": 1,
+		"sender_name": "Muhammetberdi",
+		"sender_surname": "Jepbarov",
+		"postal_phone_number": "+99361234567",
+		"sender_phone_number": "+99361234567",
+		"sender_email": "plain@mail.com",
+		"place_to_deliver": "warehouse",
+		"city": "Ashgabat",
+		"address": "Azadi 98/2",
+		"paid": 1,
+		"info": "",
+	}
+]
+
+order_products_data = [
+	{
+		"order_code": 1,
+		"product_name": "HP wireless optical mouse",
+		"price": 110,
+		"currency": "m.",
+		"qty": 1,
+	},
+	{
+		"order_code": 1,
+		"product_name": "Air Pods",
+		"price": 50,
+		"currency": "m.",
+		"qty": 3,
+	},
+	{
+		"order_code": 1,
+		"product_name": "Arduino Set #1",
+		"price": 982,
+		"currency": "m.",
+		"qty": 1,
+	}
+]
+
 locations_data = [
 	{
 		"id": 1,
-		"name": "study_place",
-		"full_name": "Plan yerin plan bolumcesenin okuw binasy",
-		"address": "Parahat 01",
+		"name": "aeroport",
+		"full_name": "International Aeroport of Turkmenistan",
+		"address": "Gurbansoltan-eje",
+		"key": "crypted_code_of_international_aeroport",
 		"latitude": "11112",
 		"longitude": "92323",
 	},
@@ -62,6 +103,7 @@ locations_data = [
 		"name": "entrance",
 		"full_name": "Plan yerin girelgesi",
 		"address": "Parahat 01",
+		"key": "crypted_code_2",
 		"latitude": "11121",
 		"longitude": "92333",
 	},
@@ -80,5 +122,15 @@ for finger in fingers_data:
 for location in locations_data:
 	current_location = Location(**location)
 	db.session.add(current_location)
+
+for order in orders_data:
+	current_order = Order(**order)
+	db.session.add(current_order)
+
+# db.session.commit()
+#	for order_product in order_products_data:
+#		#this_product_order = Order.query.filter_by(order_code == order['order_code']).first()
+#		order_product["order_id"] = 1
+#		current_product = Order_product(**order_product)
 
 db.session.commit()

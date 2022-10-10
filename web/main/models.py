@@ -37,6 +37,7 @@ class Access_log(db.Model):
 	finger_id = db.Column(db.Integer, db.ForeignKey('finger.id'))
 	location_id = db.Column(db.Integer, db.ForeignKey('location.id'))
 	access_type = db.Column(db.String(255))
+	location_info = db.Column(db.String())
 	# 1 is entrance
 	entrance_type = db.Column(db.Integer, default=1)
 	date = db.Column(db.DateTime, default = datetime.now())
@@ -47,6 +48,7 @@ class Access_log(db.Model):
 			"finger_id": self.finger_id,
 			"location_id": self.location_id,
 			"access_type": self.access_type,
+			"location_info": self.location_info,
 			"entrance_type": self.entrance_type,
 			"date": self.date,
 		}
@@ -54,6 +56,7 @@ class Access_log(db.Model):
 class Location(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
 	name = db.Column(db.String(1000))
+	key = db.Column(db.String(1000))
 	full_name = db.Column(db.String)
 	address = db.Column(db.String)
 	latitude = db.Column(db.String)
@@ -64,11 +67,26 @@ class Location(db.Model):
 		return {
 			"id": self.id,
 			"name": self.name,
+			"key": self.key,
 			"full_name": self.full_name,
 			"address": self.address,
 			"latitude": self.latitude,
 			"longitude": self.longitude,
 		}
+
+class Order(db.Model):
+	id = db.Column(db.Integer, primary_key=True)
+	order_code = db.Column(db.String())
+	sender_name = db.Column(db.String())
+	sender_surname = db.Column(db.String())
+	postal_phone_number = db.Column(db.String())
+	sender_phone_number = db.Column(db.String())
+	sender_email = db.Column(db.String())
+	place_to_deliver = db.Column(db.String())
+	city = db.Column(db.String())
+	address = db.Column(db.String())
+	paid = db.Column(db.Integer(), default=0)
+	info = db.Column(db.String())
 
 class Finger(db.Model):
 	id = db.Column(db.Integer, primary_key=True)

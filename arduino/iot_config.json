@@ -4,6 +4,7 @@
 	"server_host": "http://localhost",
 	"server_port": "5000",
 	"server_route": "/rfid_tag/",
+	"entrance_type": "entrance",
 	"location": "International Aeroport of Turkmenistan",
 	"location_key": "crypted_code_of_international_aeroport"
 }

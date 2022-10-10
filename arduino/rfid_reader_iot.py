@@ -2,13 +2,14 @@
 import serial, requests, json
 
 config = {
-	"serial_port": "/dev/ttyACM0",
-	"baudrate": 9600,
-	"server_host": "http://localhost",
-	"server_port": "5000",
-	"server_route": "/rfid_tag/",
-	"location": "International Aeroport of Turkmenistan",
-	"location_key": "crypted_code_of_international_aeroport"
+    "serial_port": "/dev/ttyACM0",
+    "baudrate": 9600,
+    "server_host": "http://localhost",
+    "server_port": "5000",
+    "server_route": "/rfid_tag/",
+    "entrance_type": "entrance",
+    "location": "International Aeroport of Turkmenistan",
+    "location_key": "crypted_code_of_international_aeroport"
 }
 
 try:
@@ -18,7 +19,7 @@ except:
 	pass
 
 ser = serial.Serial(port=config['serial_port'], baudrate=config['baudrate'], timeout=1)
-url = f"{config['server_host']}:{config['server_port']}{config['server_route']}/?location={config['location']}&location_key={config['location_key']}"
+url = f"{config['server_host']}:{config['server_port']}{config['server_route']}/?location={config['location']}&code={config['location_key']}&entrance_type={config['entrance_type']}"
 
 while True:
     stream = str(ser.readline())
@@ -29,6 +30,6 @@ while True:
             stream.index("card_")
             card_code = stream.split("_")[1][:11]
             print(f"{url}{card_code}")
-            r = requests.get(f"{url}&card_id={card_code}")
+            r = requests.get(f"{url}&code={card_code}")
     except Exception as ex:
         print(ex)
