@@ -54,7 +54,7 @@ void validateCard(String ID_key){
   for (int i = 0; i < qtyOfCards; i++){
     if (ID_key.indexOf(registeredCards[i]) >= 0){
       openDoor();
-      Serial.println(registeredCards[i]);
+      //Serial.println(registeredCards[i]);
     }
   }
 }
