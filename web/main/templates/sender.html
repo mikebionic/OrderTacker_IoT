@@ -10,7 +10,7 @@
 						<label> Ady </label>
 						<input
 							type="text"
-							name="firstName"
+							name="sender_name"
 							class="form-control"
 							placeholder="Ady"
 						/>
@@ -21,7 +21,7 @@
 						<label class="control-label"> Atasynyň ady </label>
 						<input
 							type="text"
-							name="lastName"
+							name="sender_surname"
 							class="form-control"
 							placeholder="Atasynyň ady"
 						/>
@@ -32,7 +32,12 @@
 					<div class="form-group">
 						<div class="input-group">
 							<span class="input-group-addon">@</span>
-							<input type="text" placeholder="E-mail" class="form-control" />
+							<input
+								type="text"
+								name="sender_email"
+								placeholder="E-mail"
+								class="form-control"
+							/>
 						</div>
 					</div>
 				</div>
@@ -44,6 +49,7 @@
 							</span>
 							<input
 								type="text"
+								name="postal_phone_number"
 								placeholder="Çaparyň belgisi"
 								class="form-control"
 							/>
@@ -58,6 +64,7 @@
 							</span>
 							<input
 								type="text"
+								name="sender_phone_number"
 								placeholder="Iberijiň belgisi"
 								class="form-control"
 							/>
@@ -73,12 +80,17 @@
 							<input
 								type="radio"
 								id="warehouse"
-								name="route"
+								name="place_to_deliver"
 								value="warehouse"
 								checked="checked"
 							/>
 							<label for="warehouse"> Jemleýji ammar </label>
-							<input type="radio" id="house" name="route" value="house" />
+							<input
+								type="radio"
+								id="place_to_deliver"
+								name="route"
+								value="house"
+							/>
 							<label for="house"> Öý </label>
 						</div>
 					</div>
@@ -96,7 +108,7 @@
 				<div class="col-md-6">
 					<div class="form-group">
 						<label> Ibermeli şäheri we regiony saýlaň </label>
-						<select name="country" class="form-control">
+						<select name="place_to_deliver" class="form-control">
 							<!-- <option value="">&nbsp;</option> -->
 							<option value="AS">Aşgabat</option>
 							<option value="AH">Ahal</option>
@@ -121,7 +133,13 @@
 			</div>
 
 			<div class="checkbox clip-check check-primary checkbox-inline">
-				<input type="checkbox" id="checkbox11" value="1" checked="" />
+				<input
+					type="checkbox"
+					id="checkbox11"
+					name="paid"
+					value="1"
+					checked=""
+				/>
 				<label for="checkbox11"> Sargyt tölendi </label>
 			</div>
 
@@ -148,8 +166,8 @@
 							<tr>
 								<td>2</td>
 								<td>Air Pods</td>
-								<td class="hidden-480">50</td>
 								<td class="hidden-480">3 m.</td>
+								<td class="hidden-480">50</td>
 								<td>150 m.</td>
 							</tr>
 							<tr>
@@ -173,6 +191,7 @@
 						<textarea
 							placeholder="Default Text"
 							id="form-field-22"
+							name="info"
 							class="form-control"
 						></textarea>
 					</div>
