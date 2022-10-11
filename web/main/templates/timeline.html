@@ -65,12 +65,14 @@
 					<div class="timeline_date">
 						<div>
 							<div class="inline-block">
-								<span class="day text-bold">28</span>
+								<span class="day text-bold">{{log.date.day}}</span>
 							</div>
 							<div class="inline-block">
-								<span class="block week-day text-extra-large">Anna</span>
+								<span class="block week-day text-extra-large"
+									>{{log.date.strftime('%A')}}</span
+								>
 								<span class="block month text-large text-light"
-									>Sentýabr 2022</span
+									>{{log.date.strftime('%B')}} {{log.date.year}}</span
 								>
 							</div>
 						</div>

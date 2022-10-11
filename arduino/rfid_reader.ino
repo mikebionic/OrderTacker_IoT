@@ -10,6 +10,7 @@ int button_state = 0;
 int buttonPin = 7;
 int ledIndicator = 2;
 int doorDelay = 800;
+int buzzer = 4;
 
 MFRC522 rfid(SS_PIN, RST_PIN);
 MFRC522::MIFARE_Key key;
@@ -93,7 +94,13 @@ void rfidModule(){
 
   validateCard(ID_key);
 
-  delay(1000);
+  tone(buzzer, 800);
+  delay(300);
+  noTone(buzzer);
+  delay(300);
+  tone(buzzer, 800);
+  delay(300);
+  noTone(buzzer);
 
   rfid.PICC_HaltA();
   rfid.PCD_StopCrypto1();

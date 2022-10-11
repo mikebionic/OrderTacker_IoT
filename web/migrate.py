@@ -136,6 +136,17 @@ locations_data = [
 	},
 ]
 
+access_logs = [
+	{
+		"date": "02-09-22 12:12:12",
+	},
+	{
+		"date": "16-09-22 12:12:12",
+	},
+]
+
+#for log in access_logs:
+#	dt_obj = datetime.strptime(log['date'], '%d-%m-%y %H:%M:%S')
 
 for user in users_data:
 	current_user = User(**user)
