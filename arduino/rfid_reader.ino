@@ -15,9 +15,11 @@ int buzzer = 4;
 MFRC522 rfid(SS_PIN, RST_PIN);
 MFRC522::MIFARE_Key key;
 
-int qtyOfCards = 1;
+int qtyOfCards = 3;
 String registeredCards[] = {
-  "8A:4B:81:7F"
+  "8A:4B:81:7F",
+  "DA:32:1B:3F",
+  "C9:CE:B1:C2"
 };
 
 

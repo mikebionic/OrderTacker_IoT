@@ -45,7 +45,13 @@ fingers_data = [
 	{
 		"id": 2,
 		"user_id": 3,
-		"code": "8A:4B:81:7F",
+		"code": "DA:32:1B:3F",
+		"name": "",
+	},
+	{
+		"id": 3,
+		"user_id": 3,
+		"code": "C9:CE:B1:C2",
 		"name": "",
 	}
 ]
@@ -54,7 +60,7 @@ fingers_data = [
 orders_data = [
 	{
 		"order_code": 1,
-		"card_code": "8A:4B:81:7F",
+		"card_code": "DA:32:1B:3F",
 		"sender_name": "Muhammetberdi",
 		"sender_surname": "Jepbarov",
 		"postal_phone_number": "+99361234567",
@@ -64,6 +70,20 @@ orders_data = [
 		"city": "Ashgabat",
 		"address": "Azadi 98/2",
 		"paid": 1,
+		"info": "",
+	},
+	{
+		"order_code": 2,
+		"card_code": "C9:CE:B1:C2",
+		"sender_name": "Nurmuhammet",
+		"sender_surname": "Kurbanalyyew",
+		"postal_phone_number": "+99361234567",
+		"sender_phone_number": "+99361234567",
+		"sender_email": "plain@mail.com",
+		"place_to_deliver": "warehouse",
+		"city": "Ashgabat",
+		"address": "Magtymkuly sa yoly",
+		"paid": 0,
 		"info": "",
 	}
 ]
