@@ -1,19 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>{{ title if title else 'Haryt nirede' }}</title>
+		<title>{{ title if title else 'SARGYT' }}</title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-  	<link href="{{ url_for('static', filename='img/favicon.png') }}" rel="icon">
-		<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap/css/bootstrap.min.css') }}">
-		<link rel="stylesheet" href="{{ url_for('static', filename='css/fontawesome/css/font-awesome.min.css') }}">
-		<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"
+		/>
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<link
+			href="{{ url_for('static', filename='img/favicon.png') }}"
+			rel="icon"
+		/>
+		<link
+			rel="stylesheet"
+			href="{{ url_for('static', filename='css/bootstrap/css/bootstrap.min.css') }}"
+		/>
+		<link
+			rel="stylesheet"
+			href="{{ url_for('static', filename='css/fontawesome/css/font-awesome.min.css') }}"
+		/>
+		<link
+			rel="stylesheet"
+			href="{{ url_for('static', filename='css/styles.css') }}"
+		/>
 
 		{% block styles %}{% endblock %}
 	</head>
-	
+
 	<body>
 		<div id="app">
 			<div>
@@ -22,15 +37,18 @@
 					<section id="page-title">
 						<div class="row">
 							<div class="col-sm-8">
-								<h1 class="mainTitle">{{ title if title else 'Haryt nirede' }}</h1>
-								<span class="mainDescription">Harydyňyzy ýokary hilli tehnologiýalar üsti bilen goragda ugradyň we yzarlaň</span>
+								<h1 class="mainTitle">{{ title if title else 'SARGYT' }}</h1>
+								<span class="mainDescription"
+									>Harydyňyzy ýokary hilli tehnologiýalar üsti bilen goragda
+									ugradyň we yzarlaň</span
+								>
 							</div>
 							<ol class="breadcrumb">
 								<li>
 									<span><a href="/">Esasy</a></span>
 								</li>
 								<li class="active">
-									<span>{{ title if title else 'Haryt nirede' }}</span>
+									<span>{{ title if title else 'SARGYT' }}</span>
 								</li>
 							</ol>
 						</div>
@@ -40,19 +58,13 @@
 					<div class="container-fluid container-fullw bg-white">
 						<div class="row">
 							<div class="col-md-12">
-
-
-
-								{% with messages = get_flashed_messages(with_categories=true) %} {%
-								if messages %} {% for category, message in messages %}
+								{% with messages = get_flashed_messages(with_categories=true) %}
+								{% if messages %} {% for category, message in messages %}
 								<div class="p-3 alert alert-{{ category }}" role="alert">
-								{{ message }}
+									{{ message }}
 								</div>
 								{% endfor %} {% endif %} {% endwith %} {% block content %}{%
 								endblock %}
-
-
-
 							</div>
 						</div>
 					</div>

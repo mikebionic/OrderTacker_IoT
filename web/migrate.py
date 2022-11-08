@@ -51,7 +51,7 @@ fingers_data = [
 	{
 		"id": 3,
 		"user_id": 3,
-		"code": "C9:CE:B1:C2",
+		"code": "A3:72:B2:18",
 		"name": "",
 	}
 ]
@@ -74,7 +74,7 @@ orders_data = [
 	},
 	{
 		"order_code": 2,
-		"card_code": "C9:CE:B1:C2",
+		"card_code": "A3:72:B2:18",
 		"sender_name": "Nurmuhammet",
 		"sender_surname": "Kurbanalyyew",
 		"postal_phone_number": "+99361234567",
