@@ -1,92 +1,85 @@
-{% extends "layout.html" %} {% block styles %}
-<meta http-equiv="refresh" content="6" />
-{% endblock %} {% block content %}
-<div id="timeline">
-	<div class="timeline">
-		<div class="spine"></div>
-		<div class="date_separator" id="november">
-			<span>Sargytyň ýoly</span>
+{% extends "layout.html" %}
+
+{% block content %}
+	<div id="timeline">
+		<div class="timeline">
+			<div class="spine"></div>
+			<div class="date_separator" id="november">
+				<span>Sargytyň ýoly</span>
+			</div>
+			<ul class="columns">
+
+				<li>
+					<div class="timeline_element partition-white">
+						<div class="timeline_date">
+							<div>
+								<div class="inline-block">
+									<span class="day text-bold">02</span>
+								</div>
+								<div class="inline-block">
+									<span class="block week-day text-extra-large">Anna</span>
+									<span class="block month text-large text-light">Sentýabr 2022</span>
+								</div>
+							</div>
+						</div>
+						<div class="timeline_title">
+							<i class="fa fa-check fa-2x pull-left fa-border"></i>
+							<h4 class="light-text no-margin padding-5">Iberildi</h4>
+						</div>
+						<div class="timeline_content">
+							Sargyt satyjydan hasabata alynyp, dünýä aeroporta iberildi
+						</div>
+					</div>
+				</li>
+
+				<li>
+					<div class="timeline_element partition-primary">
+						<div class="timeline_date">
+							<div>
+								<div class="inline-block">
+									<span class="day text-bold">16</span>
+								</div>
+								<div class="inline-block">
+									<span class="block week-day text-extra-large">Anna</span>
+									<span class="block month text-large text-light">Sentýabr 2022</span>
+								</div>
+							</div>
+						</div>
+						<div class="timeline_title">
+							<i class="fa fa-plane fa-2x pull-left fa-border"></i>
+							<h4 class="text-white no-margin padding-5">Turkiýe</h4>
+						</div>
+						<div class="timeline_content">
+							Sargyt Turkiýe aeroport ammaryndan çykyp Turkmen Airlines uçara ýygnalyndy.
+						</div>
+					</div>
+				</li>
+
+				<li>
+					<div class="timeline_element partition-purple">
+						<div class="timeline_date">
+							<div>
+								<div class="inline-block">
+									<span class="day text-bold">28</span>
+								</div>
+								<div class="inline-block">
+									<span class="block week-day text-extra-large">Anna</span>
+									<span class="block month text-large text-light">Sentýabr 2022</span>
+								</div>
+							</div>
+						</div>
+						<div class="timeline_title">
+							<i class="fa fa-map-marker fa-2x pull-left fa-border"></i>
+							<h4 class="text-white no-margin padding-5">Aşgabat</h4>
+						</div>
+						<div class="timeline_content">
+							Sargyt Aşgabat aeroportda hasabata alyndy we ammara geçirildi.
+						</div>
+					</div>
+				</li>
+
+			</ul>
 		</div>
-		<ul class="columns">
-			<li>
-				<div class="timeline_element partition-white">
-					<div class="timeline_date">
-						<div>
-							<div class="inline-block">
-								<span class="day text-bold">02</span>
-							</div>
-							<div class="inline-block">
-								<span class="block week-day text-extra-large">Anna</span>
-								<span class="block month text-large text-light"
-									>Sentýabr 2022</span
-								>
-							</div>
-						</div>
-					</div>
-					<div class="timeline_title">
-						<i class="fa fa-check fa-2x pull-left fa-border"></i>
-						<h4 class="light-text no-margin padding-5">Iberildi</h4>
-					</div>
-					<div class="timeline_content">
-						Sargyt satyjydan hasabata alynyp, dünýä aeroporta iberildi
-					</div>
-				</div>
-			</li>
-
-			<li>
-				<div class="timeline_element partition-primary">
-					<div class="timeline_date">
-						<div>
-							<div class="inline-block">
-								<span class="day text-bold">16</span>
-							</div>
-							<div class="inline-block">
-								<span class="block week-day text-extra-large">Anna</span>
-								<span class="block month text-large text-light"
-									>Sentýabr 2022</span
-								>
-							</div>
-						</div>
-					</div>
-					<div class="timeline_title">
-						<i class="fa fa-plane fa-2x pull-left fa-border"></i>
-						<h4 class="text-white no-margin padding-5">Turkiýe</h4>
-					</div>
-					<div class="timeline_content">
-						Sargyt Turkiýe aeroport ammaryndan çykyp Turkmen Airlines uçara
-						ýygnalyndy.
-					</div>
-				</div>
-			</li>
-
-			{% if access_logs %} {% for log in access_logs %}
-			<li>
-				<div class="timeline_element partition-purple">
-					<div class="timeline_date">
-						<div>
-							<div class="inline-block">
-								<span class="day text-bold">{{log.date.day}}</span>
-							</div>
-							<div class="inline-block">
-								<span class="block week-day text-extra-large"
-									>{{log.date.strftime('%A')}}</span
-								>
-								<span class="block month text-large text-light"
-									>{{log.date.strftime('%B')}} {{log.date.year}}</span
-								>
-							</div>
-						</div>
-					</div>
-					<div class="timeline_title">
-						<i class="fa fa-map-marker fa-2x pull-left fa-border"></i>
-						<h4 class="text-white no-margin padding-5">{{ log.info }}</h4>
-					</div>
-					<div class="timeline_content">{{ log.description }}</div>
-				</div>
-			</li>
-			{% endfor %} {% endif %}
-		</ul>
 	</div>
-</div>
 
 {% endblock %}

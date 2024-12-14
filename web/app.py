@@ -1,4 +1,5 @@
 from main import create_app
+from main.config import Config
 
 app = create_app()
 
