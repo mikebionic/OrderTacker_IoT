@@ -1,8 +1,5 @@
 from flask import (
-	request,
-	redirect,
 	render_template,
-	url_for
 )
 from . import bp
 

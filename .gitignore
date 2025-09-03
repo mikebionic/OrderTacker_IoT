@@ -4,7 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
-
+**/venv/**
 # testing
 /coverage
 
@@ -24,7 +24,6 @@ yarn-error.log*
 .env
 yarn.lock
 
-config.py
 
 *.db
 
